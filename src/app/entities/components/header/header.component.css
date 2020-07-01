@@ -1,0 +1,21 @@
+mat-toolbar 
+{
+    background-color: black;
+    height: 64px;
+}
+h1 
+{
+    color: white;
+    margin-left: 0.5em;
+}
+
+.right-side {
+    position: absolute; 
+    right: 20px;
+}
+.right-side a {
+    transition: all 0.3s;
+    display: flex;
+    text-decoration: none;
+    color: #e2e2e2;
+  }

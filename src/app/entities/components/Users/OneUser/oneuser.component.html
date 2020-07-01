@@ -1,0 +1,35 @@
+<h1>User {{oneuser.name}}</h1>
+
+<div class="User">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+
+    <a class="atrib">Name: {{oneuser.name}}</a>
+    <br>
+    <a class="atrib">Phone: {{oneuser.phone}}</a>
+    <br>
+
+    <div *ngIf="oneuser.paid; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><a class="atrib">Paid</a></ng-template>
+        <ng-template #elseBlock><a class="atrib">Don't paid</a></ng-template>
+    
+    <button class="deleteButton" (click)="DeleteUser()">Delete</button>
+</div>
+<br>
+
+<h2>Install application for user</h2>
+<input type="text" class="AppId" name="search" placeholder="Enter application id" [(ngModel)]="appid">
+<button class="addApp" type="submit"  (click)="addAppforUser()">Set</button>
+<label>{{answer}}</label>
+
+<br>
+<h2>
+    This user has installed applications:</h2>
+<div class="UsersAppsList">
+    <div class="AppItem" *ngFor="let i of UserApps">
+      <label class="userNameLabel" style="font-size: 28px"> {{i}} </label>
+      <br>
+      
+    </div>
+</div>
+

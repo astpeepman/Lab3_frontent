@@ -1,0 +1,54 @@
+<h1>{{title}}</h1>
+
+<input type="text" class="search" name="search" placeholder="Search from id.." [(ngModel)]="searchId">
+<button class="searchsubmit" type="submit"  (click)="SetClick()">Search</button>
+
+<div class="addUser">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+
+    <a class="addtext">Add User</a>
+    <br>
+
+    <div class="Atribs">
+        <label class="atribLabel" for="username">Name of User</label>
+        <input type="text" class="textbox" id="username" name="username" placeholder="Enter the name of the user" [(ngModel)]="nameinput">
+        <label class="atribLabel" for="Phone">Phone</label>
+        <input type="text" class="textbox" id="Phone" name="Phone" placeholder="Enter the phone" [(ngModel)]="Phone">
+        
+        <input class="paidCheckbox" type="checkbox" id="paid" name="paid" value="paid" (input)="SetPaid()">
+        <label class="atribLabel" for="paid">Paid</label>
+
+        <div *ngIf="checkphone(); then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><button  class="addsubmit" (click)="addUser()">Submit</button></ng-template>
+        <ng-template #elseBlock><button  class="addsubmit" (click)="ErroePhone()">Submit</button>
+        <label class="ErrorPhone" >{{errorphone}}</label></ng-template>
+        
+        <!-- <button  class="addsubmit" (click)="addUser()">Submit</button> -->
+    </div>
+    
+</div>
+
+<hr>
+<br>
+<br>
+
+<!-- <input class="paidCheckbox1" type="checkbox" id="paid1" name="paid1" value="paid" (input)="OnlyPaid()"> -->
+
+<input #savePaidCheckBox
+    class="paidCheckbox"
+    id="savePaidCheckBox" 
+    type="checkbox" 
+    [checked]="onlypaid" 
+    (change)="onsavePaidChanged(savePaidCheckBox.checked)" />
+    <label class="PaidUsersInput" for="savePaidCheckBox">Only paid users</label>
+<router-outlet></router-outlet>
+<!-- <div class="UsersList">
+    <div class="UserItem" *ngFor="let i of UsersList.slice().reverse()">
+      <label class="userNameLabel" style="font-size: 28px"> {{i.name}} </label>
+      <br>
+      <label class="userphoneLabel">{{i.phone}}</label>
+      <br>
+      <label class="userpaidLabel"></label>
+    </div>
+  </div> -->

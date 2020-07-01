@@ -1,0 +1,24 @@
+.Application {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 30%;
+}
+
+.atrib {
+    color: rgb(36, 32, 32);
+    font-family: 'Molengo', Georgia, Times, serif;
+}
+
+.UserItem {
+    float: left;
+    width: calc(50% - 81px);
+    margin:15px;
+    border-color: grey;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: rgb(26, 26, 26); 
+    box-shadow: 0 0 4px #A9A9A9; 
+    height: 50px;
+    padding: 20px;
+}

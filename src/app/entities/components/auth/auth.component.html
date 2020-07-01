@@ -1,0 +1,15 @@
+<div class="auth">
+  <form>
+    <div *ngIf="!isLogged">
+      <p> {{tittle}} </p>
+      <input type="text" class="textbox" name="username" placeholder="Enter the login" [(ngModel)]="login">
+      <br>
+      <input type="password" class="textbox" name="password" placeholder="Enter the password" [(ngModel)]="password">
+      <br>
+      <button class="submit"(click)="LogIn()" [disabled]="ButtonCheck()">LogIn</button>
+    </div>
+    <div *ngIf="isLogged">
+      <button (click)="LogOut()" style="float: none">LogOut</button>
+    </div>
+  </form>
+</div>
